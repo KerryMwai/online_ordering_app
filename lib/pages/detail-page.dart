@@ -2,15 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:online_ordering_app/constants/constant.dart';
 import 'package:online_ordering_app/pages/mobile-detail-view.dart';
 import 'package:online_ordering_app/pages/tablet-detail-veiw.dart';
-import 'package:online_ordering_app/widgets/custom-button.dart';
-import 'package:online_ordering_app/widgets/custom-circle-container.dart';
-import 'dart:convert';
-
 class DetailPage extends StatefulWidget {
   String name, image, price, rating, likes, dislikes, description;
   List<String> similar_items;
-  int _counter = 1;
-  double _total_price = 0;
   DetailPage(
       {super.key,
       required this.name,
@@ -67,17 +61,5 @@ class _DetailPageState extends State<DetailPage> {
                     dislikes: widget.dislikes,
                     similar_items: widget.similar_items,
                     description: widget.description)));
-  }
-
-  void _incrementItem() {
-    widget._counter++;
-  }
-
-  void _decrementItem() {
-    widget._counter--;
-  }
-
-  void _getTotalPrice() {
-    widget._total_price = double.parse(widget.price) * widget._counter;
   }
 }
